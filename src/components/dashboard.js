@@ -18,6 +18,7 @@ import FAQs from './faqs'
 import About from './about'
 import StepSection from './stepsSection'
 import FeaturesSection from './featuresSection'
+import { Link } from 'react-router-dom'
 
 const Dashboard = () => {
   const items = [
@@ -43,17 +44,11 @@ const Dashboard = () => {
 
   const [activeIndex, setActiveIndex] = useState(0);
   const [animating, setAnimating] = useState(false);
-  const [currentPage, setCurrentPage] = useState('Dashboard')
 
-  useEffect(()=>{
-   let page =  localStorage.getItem('current-page')
-   if(page){
-    setCurrentPage(page)
-   }
-   else{
-    setCurrentPage('Dashboard')
-   }
-  },[])
+  const homeRef = useRef(null);
+  const aboutRef =useRef(null);
+  const faqsRef = useRef(null);
+
 
   const goToSlide = (slideIndex) => {
     if (animating) return;
@@ -66,24 +61,31 @@ const Dashboard = () => {
       onExited={() => setAnimating(false)}
       key={item.src}
     >
-      <img src={item.src} alt={item.altText} />
+    <div className='d-flex align-items-center justify-content-center'>
+    <img src={item.src} alt={item.altText} />
+    </div>
+  
       <CarouselCaption captionText={item.caption} captionHeader={item.caption} />
     </CarouselItem>
   ));
 
-
+ const scrollToHome = ()=>{
+  homeRef.current.scrollIntoView({ behavior: 'smooth' });
+ }
+ const scrollToAbout = ()=>{
+  aboutRef.current.scrollIntoView({ behavior: 'smooth' });
+ }
+ const scrollToFAQs = ()=>{
+  faqsRef.current.scrollIntoView({ behavior: 'smooth' });
+ }
 
   return (
     <>
-    
-    <Header setCurrentPage= {setCurrentPage}/>
-    {
-      currentPage == 'Dashboard' && 
-      <>
-      <div className='dashboard_main'>
+    <Header scrollToHome = {scrollToHome} scrollToAbout = {scrollToAbout} scrollToFAQs = {scrollToFAQs}/>
+      <div className='dashboard_main' ref={homeRef}>
       <div className='download_section'>
     <div className='d_title'>
-        <span>Download Videos By Link</span>
+        <span>Download Videos By Pasting Any Link</span>
     </div>
     <div className='search_div'>
     <i className="fa-solid fa-link paste_icon"></i>
@@ -92,12 +94,12 @@ const Dashboard = () => {
     </div>
     <div className="custom-buttons">
         {items.map((item, index) => (
-          <button key={index} onClick={() => goToSlide(index)} className={`Tiktok me-3`}>
+          <button key={index} onClick={() => goToSlide(index)} className={activeIndex == index ? `Tiktok me-3` : `me-3 simple`}>
           {item.title}
           </button>
         ))}
       </div>
-    <Carousel activeIndex={activeIndex} interval={false} keyboard={false} pause={false}>
+    <Carousel className='w-100' activeIndex={activeIndex} interval={false} keyboard={false} pause={false}>
       {slides}
     </Carousel>
     </div>
@@ -127,21 +129,30 @@ const Dashboard = () => {
     </div>
     <StepSection/>
     <FeaturesSection/>
-   
-            
-    </>
-    }
-   {
-    currentPage == 'About' && 
-    <About/>
-   }
-   {
-    currentPage == 'FAQs' && 
-    <FAQs/>
-   }
-    
-
-
+    <FAQs faqsRef= {faqsRef}/>
+    <About aboutRef = {aboutRef}/>
+    <div className='footer'>
+      <div className='hr'></div>
+      <div className='footer_main'>
+        <div className='footer_logo'>
+          Vidz Downloader
+        </div>
+        <div className='footer_links'>
+          <Link className='footer_link'>
+            Contact Us
+          </Link>
+          <Link className='footer_link'>
+            Privacy Policy
+          </Link>
+          <Link className='footer_link'>
+            Terms and Conditions
+          </Link>
+        </div>
+      </div>
+      <div className='copy_right'>
+        All Rights Reserved
+      </div>
+    </div>
     </>
   )
 }

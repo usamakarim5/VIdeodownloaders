@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.b7f92ce4.css",
+    "main.js": "/static/js/main.510130c6.js",
+    "static/media/tiktok.png": "/static/media/tiktok.42f760750f2c1f68b520.png",
+    "static/media/youtube.jpg": "/static/media/youtube.f759956b1a4411caebf9.jpg",
+    "static/media/facebook.png": "/static/media/facebook.40d9390630f4fc602e8b.png",
+    "static/media/faqs.png": "/static/media/faqs.f50718728e6478d5caba.png",
+    "static/media/download_mobile.webp": "/static/media/download_mobile.f66f41a5712dbf20e5ed.webp",
+    "static/media/about.jpg": "/static/media/about.0315513b2cb322560fae.jpg",
+    "static/media/bottom_rocket.png": "/static/media/bottom_rocket.abad2b7544b19f7419f1.png",
+    "static/media/background_image.jpg": "/static/media/background_image.d1cd77e747091ae802cc.jpg",
+    "static/media/bottom_secure.png": "/static/media/bottom_secure.bfe3332237cfbf4adc9e.png",
+    "static/media/downloadLogo.png": "/static/media/downloadLogo.88fa165779db69a08c36.png",
+    "static/media/bottom_heart.png": "/static/media/bottom_heart.31fdaac199ea5081b328.png",
+    "index.html": "/index.html",
+    "main.b7f92ce4.css.map": "/static/css/main.b7f92ce4.css.map",
+    "main.510130c6.js.map": "/static/js/main.510130c6.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b7f92ce4.css",
+    "static/js/main.510130c6.js"
+  ]
+}

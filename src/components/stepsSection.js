@@ -17,7 +17,7 @@ const StepSection = () => {
       <div className="freq_main px-0" >
         <div className="steps_inner">
           <div className="q_left justify-content-start flex-column">
-            <h4 className="mt-2 mb-3">Download Any Plateform Videos</h4>
+            <div className="step_head">Download Any Plateform Videos</div>
             <img src={download_image} alt="pic" className="step_image"></img>
           </div>
           <div className="q_right me-3 p-0">

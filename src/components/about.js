@@ -2,10 +2,11 @@ import React from "react";
 import '../App.css'
 import about from '../images/about.jpg'
 
-const About = () => {
+const About = (props) => {
+  const{aboutRef} = props
   return (
     <>
-      <div className="freq_main">
+      <div className="freq_main" ref = {aboutRef}>
         <div className="about_main">
           <div className="q_right">
             <h4 className="py-4">About Us</h4>

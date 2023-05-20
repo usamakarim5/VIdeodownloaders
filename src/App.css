@@ -19,6 +19,15 @@ body{
     align-items: center;
 
 }
+.vids_title{
+  background: linear-gradient(to right, #5370CF, #CF159D);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 30px;
+  font-weight: 700;
+
+}
 .logo_image{
   width: 180px;
 }
@@ -49,7 +58,10 @@ a{
   min-height: 100vh;
 }
 .d_title{
-  font-size: 40px;
+  display: flex;
+  width: 40%;
+  text-align: center;
+  font-size: 50px;
   font-weight: 800;
   background: #5370CF;
   background: linear-gradient(to right, #5370CF 0%, #CF159D 100%);
@@ -121,15 +133,27 @@ a{
   height: 35px;
   border-radius: 30px;
   border: none;
-  color: #CF159D;
+  background: #CF159D;
   font-weight: 500;
-  background: #fff;
+  color: #fff;
 }
-.Tiktok:hover{
+/* .Tiktok:hover{
   background: #CF159D;
   color: #fff;
   border: 1px solid #fff;
   transition: .4s;
+} */
+.step_head{
+  margin-bottom: 3rem;
+  font-size: 30px;
+  width: 40%;
+  font-weight: bold;
+}
+.simple{
+  font-weight: 500;
+  color: #fff;
+  background: transparent;
+  border: none;
 }
 
 
@@ -149,7 +173,6 @@ a{
 }
 .bottom_image{
  width: 40%;
- height: 100px;
 }
 .bottom_text{
   font-size: 13px;
@@ -276,7 +299,7 @@ a{
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  padding: 0rem 2rem;
+  padding: 0rem 8rem;
 }
 .feature_card{
   background: #fff;
@@ -292,4 +315,43 @@ a{
   font-size: 12px;
   padding-bottom: 2rem;
   padding-top: 0.5rem;
+}
+
+.footer{
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 5rem;
+  background: #f3f3f3;
+}
+.hr{
+  border-bottom: 1px solid lightgray;
+  margin-top: 3rem;
+}
+.footer_main{
+  margin-top: 3rem;
+  display: flex;
+  justify-content: space-around;
+}
+.footer_logo{
+  font-size: 25px;
+  font-weight: 800;
+  background: #5370CF;
+  background: linear-gradient(to right, #5370CF 0%, #CF159D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.footer_links{
+  width: 75%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.copy_right{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+  font-size: 14px;
+
 }

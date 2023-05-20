@@ -9,8 +9,8 @@ import {
   } from 'reactstrap';
 
 
-const FAQs = () => {
-
+const FAQs = (props) => {
+   const {faqsRef} = props
     const [open, setOpen] = useState('');
   const toggle = (id) => {
     if (open === id) {
@@ -22,7 +22,7 @@ const FAQs = () => {
 
   return (
     <>
-    <div className='freq_main'>
+    <div className='freq_main' ref = {faqsRef}>
         <h4 className='mb-5'>Frequently Asked Questions (FAQs)</h4>
         <div className='questions_main'>
          <div className='q_left'>
